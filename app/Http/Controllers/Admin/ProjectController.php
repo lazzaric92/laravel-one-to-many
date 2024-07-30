@@ -37,8 +37,6 @@ class ProjectController extends Controller
     {
         $data = $request->validated();
         $data['author'] = Auth::user()->name;
-
-        $newProject = new Project();
         $newProject = Project::create($data);
 
         return redirect()->route('admin.projects.show', $newProject);

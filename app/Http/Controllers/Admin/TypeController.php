@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class TypeController extends Controller
 {
@@ -31,7 +32,12 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'name' => 'required|string|min:2|max:50|unique:types',
+            'color' => 'required|string|hex_color'
+        ]);
+        $type = Type::create($data);
+        return redirect()->route('admin.types.show', compact('type'));
     }
 
     /**
@@ -53,16 +59,22 @@ class TypeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Type $type)
     {
-        //
+        $data = $request->validate([
+            'name' => ['required','string','min:2','max:50', Rule::unique('types')->ignore($type->id)],
+            'color' => 'required|string|hex_color'
+        ]);
+        $type->update($data);
+        return redirect()->route('admin.types.show', compact('type'))->with('message', $type->name . ' updated succesfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Type $type)
     {
-        //
+        $type->delete();
+        return redirect()->route('admin.types.index')->with('message', 'A type has been deleted');
     }
 }

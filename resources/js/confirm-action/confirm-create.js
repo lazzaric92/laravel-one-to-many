@@ -1,6 +1,6 @@
 document.querySelector('form.create-form').addEventListener('submit', function(event){
     event.preventDefault();
-    if(window.confirm('Add this project?') === true){
+    if(window.confirm('Are you satisfied?') === true){
         this.submit();
     }
 })

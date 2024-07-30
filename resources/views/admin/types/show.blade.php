@@ -33,7 +33,7 @@
             <div class="col-8 d-flex justify-content-between">
                 <a href="{{route('admin.types.index')}}" class="btn btn-info">Back to index</a>
                 <a href="{{route('admin.types.edit', $type)}}" class="btn btn-warning">Edit</a>
-                <form action="{{route('admin.types.destroy', $type)}}" method="POST" class="d-inline-block delete-form" data-name="{{$type->title}}">
+                <form action="{{route('admin.types.destroy', $type)}}" method="POST" class="d-inline-block delete-form" data-name="{{$type->name}}">
                     @csrf
                     @method('DELETE')
                     <input type="submit" class="btn btn-secondary ms-1" value="Delete">

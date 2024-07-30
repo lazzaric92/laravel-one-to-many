@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
+use App\Http\Controllers\Admin\TypeController as AdminTypeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -29,5 +30,6 @@ Route::middleware('auth')->name('admin.')->prefix('/admin/')->group(function(){
     Route::resource('projects', AdminProjectController::class);
     Route::patch('projects/{id}/restore', [AdminProjectController::class, 'restore'])->name('projects.restore');
     Route::delete('projects/{id}/hardDelete', [AdminProjectController::class, 'hardDelete'])->name('projects.hardDelete');
+    Route::resource('types', AdminTypeController::class);
     }
 );

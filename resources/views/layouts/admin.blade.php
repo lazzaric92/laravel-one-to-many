@@ -34,13 +34,19 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item mx-2">
+                            <a href="{{route('admin.types.index')}}" class="nav-link">Types</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a href="{{route('admin.types.create')}}" class="nav-link">Add a type</a>
+                        </li>
+                        <li class="nav-item mx-2">
                             <a href="{{route('admin.projects.index')}}" class="nav-link">Projects</a>
                         </li>
                         <li class="nav-item mx-2">
                             <a href=" {{route('admin.projects.create')}} " class="nav-link">Add a project</a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a href="{{route('admin.projects.deleted')}}" class="nav-link">Bin</a>
+                            <a href="{{route('admin.projects.deleted')}}" class="nav-link">Projects bin</a>
                         </li>
                     </ul>
 

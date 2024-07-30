@@ -15,36 +15,38 @@
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
     <body class="my_bg-gradient">
-        <header class="mx-0">
-            <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-                <div class="container">
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
+        <div id="app" class="h100vh">
+            <header class="mx-0">
+                <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+                    <div class="container">
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                            {{ config('app.name', 'Laravel') }}
+                        </a>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <!-- Left Side Of Navbar -->
 
-                        <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ms-auto">
-                            <!-- Authentication Links -->
-                            @if (Route::has('login'))
-                                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
-                                    @auth
-                                        <a href="{{ route('admin.projects.index')}}" class="text-decoration-none text-dark">Projects</a>
-                                    @else
-                                        <a href="{{ route('login') }}" class="text-decoration-none text-dark mx-2">Log in</a>
+                            <!-- Right Side Of Navbar -->
+                            <ul class="navbar-nav ms-auto">
+                                <!-- Authentication Links -->
+                                @if (Route::has('login'))
+                                    <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
+                                        @auth
+                                            <a href="{{ route('admin.projects.index')}}" class="text-decoration-none text-dark">Projects</a>
+                                        @else
+                                            <a href="{{ route('login') }}" class="text-decoration-none text-dark mx-2">Log in</a>
 
-                                        @if (Route::has('register'))
-                                            <a href="{{ route('register') }}" class="text-decoration-none text-dark mx-2">Register</a>
-                                        @endif
-                                    @endauth
-                                </div>
-                            @endif
-                        </ul>
+                                            @if (Route::has('register'))
+                                                <a href="{{ route('register') }}" class="text-decoration-none text-dark mx-2">Register</a>
+                                            @endif
+                                        @endauth
+                                    </div>
+                                @endif
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </nav>
-        </header>
+                </nav>
+            </header>
+        </div>
     </body>
 </html>

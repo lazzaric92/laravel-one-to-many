@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="text-center fw-bold mb-4">Projects</h1>
+        <h1 class="text-center text-white fw-bold mb-4">Projects</h1>
 
         @if (session('message'))
             <div class="alert alert-danger">

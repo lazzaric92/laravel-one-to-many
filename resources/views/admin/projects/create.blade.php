@@ -11,7 +11,7 @@
 @section('form-classes', 'col-6 create-form')
 
 {{-- <-- Button --}}
-@section('button-classes', 'btn-primary')
+@section('button-classes', 'btn-info')
 @section('button-value', 'Add')
 
 {{-- <-- Script --}}

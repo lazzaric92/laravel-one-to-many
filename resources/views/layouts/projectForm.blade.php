@@ -13,7 +13,19 @@
                     <label for="title" class="form-label text-white">Title</label>
                     <input type="text" class="form-control" id="title" name="title" value="{{old('title', $project->title)}}">
                     @error('title')
-                        <p class="text-danger mt-1 p-1 px-2 rounded">{{$message}}</p>
+                        <p class="mt-1 p-1 px-2 rounded">{{$message}}</p>
+                    @enderror
+                </div>
+
+                <div class="mb-3">
+                    <label for="type_id" class="form-label text-white">Type</label>
+                    <select class="form-select" aria-label="Default select example" name="type_id" id="type_id">
+                        @foreach ($types as $type)
+                            <option value="{{$type->id}}" {{($type->id == old('type_id', $project->type_id)) ? 'selected' : ''}}>{{$type->name}}</option>
+                        @endforeach
+                    </select>
+                    @error('type_id')
+                        <p class="mt-1 p-1 px-2 rounded">{{$message}}</p>
                     @enderror
                 </div>
 
@@ -21,7 +33,7 @@
                     <label for="add_devs" class="form-label text-white">Additional Dev/s</label>
                     <input type="text" class="form-control" id="add_devs" name="add_devs" value="{{old('add_devs', $project->add_devs)}}">
                     @error('add_devs')
-                        <p class="text-danger mt-1 p-1 px-2 rounded">{{$message}}</p>
+                        <p class="mt-1 p-1 px-2 rounded">{{$message}}</p>
                     @enderror
                 </div>
 
@@ -29,7 +41,7 @@
                     <label for="languages" class="form-label text-white">Languages</label>
                     <input type="text" class="form-control" id="languages" name="languages" value="{{old('languages', $project->languages)}}">
                     @error('languages')
-                        <p class="text-danger mt-1 p-1 px-2 rounded">{{$message}}</p>
+                        <p class="mt-1 p-1 px-2 rounded">{{$message}}</p>
                     @enderror
                 </div>
 
@@ -37,7 +49,7 @@
                     <label for="date" class="form-label text-white">Date</label>
                     <input type="date" class="form-control" id="date" name="date" value="{{old('date', $project->date)}}">
                     @error('date')
-                        <p class="text-danger mt-1 p-1 px-2 rounded">{{$message}}</p>
+                        <p class="mt-1 p-1 px-2 rounded">{{$message}}</p>
                     @enderror
                 </div>
 
@@ -45,7 +57,7 @@
                     <label for="github" class="form-label text-white">Github url</label>
                     <input type="text" class="form-control" id="github" name="github" value="{{old('github', $project->github)}}">
                     @error('github')
-                        <p class="text-danger mt-1 p-1 px-2 rounded">{{$message}}</p>
+                        <p class="mt-1 p-1 px-2 rounded">{{$message}}</p>
                     @enderror
                 </div>
 
@@ -53,7 +65,7 @@
                     <label for="image" class="form-label text-white">Image</label>
                     <input type="text" class="form-control" id="image" name="image" value="{{old('image', $project->image)}}">
                     @error('image')
-                        <p class="text-danger mt-1 p-1 px-2 rounded">{{$message}}</p>
+                        <p class="mt-1 p-1 px-2 rounded">{{$message}}</p>
                     @enderror
                 </div>
 
@@ -61,7 +73,7 @@
                     <label for="description" class="form-label text-white">Description</label>
                     <textarea class="form-control" name="description" id="description" cols="80" rows="10" placeholder="Write your project description">{{old('description', $project->description)}}</textarea>
                     @error('description')
-                        <p class="text-danger mt-1 p-1 px-2 rounded">{{$message}}</p>
+                        <p class="mt-1 p-1 px-2 rounded">{{$message}}</p>
                     @enderror
                 </div>
 

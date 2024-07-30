@@ -28,7 +28,8 @@ class StoreProjectRequest extends FormRequest
             'languages' => 'required|min:3|max:255',
             'date' => 'required|date',
             'github' => 'required|url',
-            'image' => 'nullable|url'
+            'image' => 'nullable|url',
+            'type_id' => 'required|integer|exists:types,id'
         ];
     }
 

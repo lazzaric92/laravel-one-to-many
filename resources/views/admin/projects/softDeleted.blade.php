@@ -41,7 +41,7 @@
                                 @method('PATCH')
                                 <input type="submit" class="btn btn-primary btn-sm ms-1" value="Restore">
                             </form>
-                            <form action="{{route('admin.projects.hardDelete', $project->id)}}" method="POST" class="d-inline-block delete-form" data-project-title="{{$project->title}}">
+                            <form action="{{route('admin.projects.hardDelete', $project->id)}}" method="POST" class="d-inline-block delete-form" data-name="{{$project->title}}">
                                 @csrf
                                 @method('DELETE')
                                 <input type="submit" class="btn btn-secondary btn-sm ms-1" value="Delete">
@@ -57,5 +57,5 @@
 @endsection
 
 @section('custom-script')
-    @vite('resources/js/projects/confirm-delete.js')
+    @vite('resources/js/confirm-action/confirm-delete.js')
 @endsection

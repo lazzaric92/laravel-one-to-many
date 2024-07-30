@@ -29,9 +29,14 @@
                     <tr>
                         <td> {{$project->id}} </td>
                         <td>
-                            <span class="badge rounded-pill text-white text-uppercase fw-bold p-2" style="background-color: {{$project->type->color}}">
+                            @if ($project->type)
+                                <span class="badge rounded-pill text-white text-uppercase fw-bold p-2" style="background-color: {{$project->type->color}}">
                                 {{$project->type->name}}
                             </span>
+                            @else
+                                ----
+                            @endif
+
                         </td>
                         <td> {{$project->title}} </td>
                         <td> {{$project->languages}} </td>
@@ -44,7 +49,7 @@
                         <td>
                             <a href=" {{route('admin.projects.show', $project)}} " class="btn btn-info btn-sm ms-1">Info</a>
                             <a href="{{route('admin.projects.edit', $project)}}" class="btn btn-warning btn-sm ms-1">Edit</a>
-                            <form action="{{route('admin.projects.destroy', $project)}}" method="POST" class="d-inline-block delete-form" data-project-title="{{$project->title}}">
+                            <form action="{{route('admin.projects.destroy', $project)}}" method="POST" class="d-inline-block delete-form" data-name="{{$project->title}}">
                                 @csrf
                                 @method('DELETE')
                                 <input type="submit" class="btn btn-secondary btn-sm ms-1" value="Delete">
@@ -60,5 +65,5 @@
 @endsection
 
 @section('custom-script')
-    @vite('resources/js/projects/confirm-delete.js')
+    @vite('resources/js/confirm-action/confirm-delete.js')
 @endsection

@@ -28,7 +28,8 @@ class UpdateProjectRequest extends FormRequest
             'description' => 'required|min:20',
             'languages' => 'required|min:3|max:255',
             'github' => 'required|url',
-            'image' => 'nullable|url'
+            'image' => 'nullable|url',
+            'type_id' => 'required'|'integer'
         ];
     }
 

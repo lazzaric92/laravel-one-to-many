@@ -17,7 +17,7 @@
 @section('form-classes', 'col-6 edit-form')
 
 {{-- <-- Button --}}
-@section('button-classes', 'btn-primary')
+@section('button-classes', 'btn-warning')
 @section('button-value', 'Edit')
 
 {{-- <-- Script --}}

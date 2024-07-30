@@ -14,8 +14,8 @@
         <!-- Scripts -->
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
-    <body class="my_bg-gradient">
-        <div id="app" class="h100vh">
+    <body>
+        <div id="app">
             <header class="mx-0">
                 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                     <div class="container">

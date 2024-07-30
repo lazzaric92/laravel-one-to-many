@@ -12,6 +12,7 @@ class Project extends Model
     use SoftDeletes;
 
     protected $fillable = [
+        'type_id',
         'title',
         'author',
         'add_devs',

@@ -30,8 +30,8 @@
                         <td> {{$project->id}} </td>
                         <td>
                             @if ($project->type)
-                                <span class="badge rounded-pill text-white text-uppercase fw-bold p-2" style="background-color: {{$project->type->color}}">
-                                {{$project->type->name}}
+                                <span class="badge rounded-pill p-2" style="background-color: {{$project->type->color}}">
+                                    <a class="text-white text-uppercase fw-bold text-decoration-none" href="{{route('admin.types.show', $project->type)}}">{{$project->type->name}}</a>
                             </span>
                             @else
                                 ----

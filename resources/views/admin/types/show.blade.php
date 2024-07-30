@@ -16,13 +16,13 @@
                             </div>
                         @endif
                         <h2 class="text-center fw-bold mb-3 p-3"> #{{$type->id}}: {{$type->name}} </h2>
-                        <p><em>Hex color: {{$type->color}}</em></p>
+                        <h3>Hex color: <em>{{$type->color}}</em></h3>
                         <div class="mb-3">
                             <h4>List of projects</h4>
                             <ul>
                                 @foreach ($type->projects as $project)
                                     <li>
-                                        <a class="text-dark text-decoration-none" href="{{route('admin.projects.show', $project)}}">#{{$project->id}} - {{$project->name}}</a>
+                                        <a class="text-dark text-decoration-none" href="{{route('admin.projects.show', $project)}}">#{{$project->id}} - {{$project->title}}</a>
                                     </li>
                                 @endforeach
                             </ul>

@@ -16,8 +16,8 @@ class TypeSeeder extends Seeder
     {
         $typesName = [
             'Static',
-            'Front-End',
-            'Back-End'
+            'Front-end',
+            'Back-end'
         ];
 
         foreach ($typesName as $typeName) {
